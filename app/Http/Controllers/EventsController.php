@@ -96,8 +96,36 @@ class EventsController extends BaseController
     ]
      */
 
-    public function getEventsWithWorkshops() {
-        throw new \Exception('implement in coding task 1');
+    public function getEventsWithWorkshops()
+    {
+
+        $responce = array();
+
+        $itemNo1 = new \stdClass();
+        $itemNo1workshops = new \stdClass();
+
+
+
+        $itemNo1workshops->id = 1;
+        $itemNo1workshops->start = "2020-02-21 10:00:00";
+        $itemNo1workshops->end = "2020-02-21 16:00:00";
+        $itemNo1workshops->event_id = 1;
+        $itemNo1workshops->name = "Illuminate your knowledge of the laravel code base";
+        $itemNo1workshops->created_at = "2021-04-25T09:32:27.000000Z";
+        $itemNo1workshops->updated_at = "2021-04-25T09:32:27.000000Z";
+
+
+        $itemNo1->id = 1;
+        $itemNo1->name = "Laravel convention 2020";
+        $itemNo1->created_at = "2021-04-25T09:32:27.000000Z";
+        $itemNo1->updated_at = "2021-04-25T09:32:27.000000Z";
+        $itemNo1->workshops = [$itemNo1workshops];
+
+        $responce =[$itemNo1];
+
+        return $responce;
+
+
     }
 
 
@@ -175,7 +203,14 @@ class EventsController extends BaseController
     ```
      */
 
-    public function getFutureEventsWithWorkshops() {
+    public function getFutureEventsWithWorkshops()
+    {
         throw new \Exception('implement in coding task 2');
+    }
+
+    public function getWarmupEventsWithWorkshops()
+    {
+//        return 1;
+        throw new \Exception('implement in coding task 3');
     }
 }

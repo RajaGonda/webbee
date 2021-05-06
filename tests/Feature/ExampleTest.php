@@ -7,7 +7,8 @@ use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    public function testWarmupEvents() {
+    public function testWarmupEvents()
+    {
         $response = $this->get('/warmupevents');
         $response->assertStatus(200)
             ->assertJsonCount(3)
@@ -16,7 +17,8 @@ class ExampleTest extends TestCase
             ->assertJsonPath('2.name', 'React convention 2021');
     }
 
-    public function testEvents() {
+    public function testEvents()
+    {
         $response = $this->get('/events');
         $response->assertStatus(200)
             ->assertJsonCount(3)
@@ -30,7 +32,8 @@ class ExampleTest extends TestCase
             ->assertJsonPath('2.workshops.1.name', 'Navigating the function jungle');
     }
 
-    public function testFutureEvents() {
+    public function testFutureEvents()
+    {
         $response = $this->get('/futureevents');
         $response->assertStatus(200)
             ->assertJsonCount(2)
@@ -42,7 +45,8 @@ class ExampleTest extends TestCase
             ->assertJsonPath('1.workshops.1.name', 'Navigating the function jungle');
     }
 
-    public function testMenu() {
+    public function testMenu()
+    {
         $response = $this->get('/menu');
         $response->assertStatus(200)
             ->assertJsonCount(1)
